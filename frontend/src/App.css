@@ -1,0 +1,42 @@
+/* ==========================================
+   WEBSITE REVEAL
+========================================== */
+
+.website {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+
+    will-change: opacity;
+}
+
+
+/* Hidden while Intro is playing */
+
+.website-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    -webkit-user-select: none;
+    user-select: none;
+
+    overflow: hidden;
+}
+
+
+/* Visible after Intro */
+
+.website-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    -webkit-user-select: auto;
+    user-select: auto;
+}
+

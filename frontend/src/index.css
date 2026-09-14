@@ -1,0 +1,41 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+html,
+body,
+#root {
+    min-width: 0;
+}
+html,
+body{
+    overflow-x: hidden;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+
+    html {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    
+
+}

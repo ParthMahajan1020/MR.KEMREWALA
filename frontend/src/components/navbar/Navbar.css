@@ -1,0 +1,667 @@
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 28px;
+  right: 28px;
+
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 18px 0 24px;
+
+  background: rgba(8, 8, 8, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 24px;
+
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+
+  z-index: 1000;
+
+  transition:
+    height 0.35s ease,
+    top 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* ========================================
+   SCROLLED
+======================================== */
+
+.navbar-scrolled {
+  top: 14px;
+  height: 72px;
+
+  background: rgba(5, 5, 5, 0.88);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: white;
+  text-decoration: none;
+
+  min-width: 245px;
+
+  flex-shrink: 0;
+}
+
+
+/* MR BOX */
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.32);
+
+  border-radius: 12px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.navbar-logo:hover .logo-mark {
+  background: white;
+  color: black;
+
+  transform: rotate(-5deg);
+}
+
+
+/* LOGO TEXT */
+
+.logo-text {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  white-space: nowrap;
+}
+
+
+.logo-text span {
+  font-weight: 400;
+
+  opacity: 0.7;
+}
+
+
+/* ========================================
+   NAV LINKS
+======================================== */
+
+.navbar-links {
+  flex: 1;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: clamp(22px, 2.5vw, 42px);
+
+  height: 100%;
+}
+
+
+.nav-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.nav-link span {
+  font-size: 8px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  transition: color 0.3s ease;
+}
+
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -9px;
+
+  width: 0;
+  height: 1px;
+
+  background: white;
+
+  transition: width 0.3s ease;
+}
+
+
+.nav-link:hover {
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+.nav-link:hover span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* ========================================
+   LET'S TALK BUTTON
+======================================== */
+
+.navbar-contact-btn {
+  height: 48px;
+
+  min-width: 150px;
+
+  padding: 0 13px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #080808;
+
+  background: #f5f2ec;
+
+  border-radius: 16px;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.contact-arrow {
+  font-size: 18px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.navbar-contact-btn:hover {
+  transform: translateY(-3px);
+
+  background: white;
+
+  box-shadow:
+    0 8px 25px rgba(255, 255, 255, 0.12);
+}
+
+
+.navbar-contact-btn:hover .contact-arrow {
+  transform: translate(3px, -3px);
+}
+
+.navbar-contact-btn:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid #f5f2ec;
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.menu-toggle {
+  display: none;
+
+  width: 48px;
+  height: 48px;
+
+  margin-left: auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+
+.menu-toggle span {
+  position: absolute;
+
+  left: 13px;
+
+  width: 21px;
+  height: 1px;
+
+  background: white;
+
+  transition:
+    transform 0.3s ease,
+    top 0.3s ease;
+}
+
+
+.menu-toggle span:first-child {
+  top: 19px;
+}
+
+
+.menu-toggle span:last-child {
+  top: 27px;
+}
+
+
+.menu-toggle.active span:first-child {
+  top: 23px;
+
+  transform: rotate(45deg);
+}
+
+
+.menu-toggle.active span:last-child {
+  top: 23px;
+
+  transform: rotate(-45deg);
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(5, 5, 5, 0.97);
+
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+
+  z-index: 900;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(-15px);
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.mobile-menu.open {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+
+.mobile-menu-inner {
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 40px;
+}
+
+
+.mobile-menu-label {
+  margin-bottom: 30px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+
+.mobile-menu-inner > a {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 15px;
+
+  padding: 16px 0;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: clamp(38px, 9vw, 72px);
+
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition:
+    padding-left 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+.mobile-menu-inner > a span {
+  font-size: 10px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  letter-spacing: 0.1em;
+}
+
+
+.mobile-menu-inner > a:hover {
+  padding-left: 12px;
+}
+
+
+.mobile-contact {
+  margin-top: 30px;
+
+  border: none !important;
+
+  font-size: 20px !important;
+
+  letter-spacing: 0.1em !important;
+}
+
+
+.mobile-contact span {
+  font-size: 22px !important;
+
+  color: white !important;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1150px) {
+
+  .navbar {
+    left: 20px;
+    right: 20px;
+  }
+
+  .navbar-logo {
+    min-width: 205px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .navbar-contact-btn {
+    min-width: 130px;
+
+    padding: 0 15px;
+  }
+}
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    height: 76px;
+  }
+
+  .navbar-logo {
+    min-width: 180px;
+  }
+
+  .logo-text {
+    font-size: 13px;
+  }
+
+  .navbar-links {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .navbar-contact-btn {
+    min-width: 115px;
+
+    height: 48px;
+
+    font-size: 10px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    top: 12px;
+
+    left: 12px;
+    right: 12px;
+
+    height: 66px;
+
+    padding:
+      0
+      8px
+      0
+      14px;
+
+    border-radius: 19px;
+  }
+
+
+  .navbar-scrolled {
+    top: 8px;
+
+    height: 62px;
+  }
+
+
+  .navbar-logo {
+    min-width: auto;
+
+    gap: 10px;
+  }
+
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+  }
+
+
+  .logo-text {
+    font-size: 12px;
+
+    letter-spacing: 0.1em;
+  }
+
+
+  .navbar-links,
+  .navbar-contact-btn {
+    display: none;
+  }
+
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 430px) {
+
+  .navbar {
+    left: 9px;
+    right: 9px;
+
+    height: 62px;
+
+    padding-left: 11px;
+  }
+
+
+  .logo-text {
+    font-size: 10px;
+  }
+
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .mobile-menu-inner {
+    padding: 25px;
+  }
+
+
+  .mobile-menu-inner > a {
+    font-size: 38px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL DEVICES
+======================================== */
+
+@media (max-width: 350px) {
+
+  .logo-text {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+}

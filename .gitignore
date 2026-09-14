@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+*/dist/
+build/
+*/build/
+out/
+*/out/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Coverage and caches
+coverage/
+.cache/
+.vite/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files and local credentials
+*.tmp
+*.temp
+*.pem
+*.key
+credentials.json
+service-account.json

@@ -127,10 +127,17 @@ BACKEND_URL
 - The frontend currently targets the backend at `http://localhost:5000` for contact and review requests.
 - A MongoDB database and configured email account are required for live backend submissions.
 
-## Author
-
-Parth Mahajan
-
 ## License
 
-No project-level license has been added. All rights remain with the project owner.
+- No project-level license has been added. All rights remain with the project owner.
+
+---
+
+## Author
+
+*Parth Mahajan*  
+- BTech Student | Full-Stack Web Development & DSA
+- LinkedIn: https://www.linkedin.com/in/parth-mahajan1020/
+- GitHub: https://github.com/ParthMahajan1020  
+- Email: parth.mahajan1020@example.com  
+- Passionate about building console applications, learning new programming languages, and exploring software projects.

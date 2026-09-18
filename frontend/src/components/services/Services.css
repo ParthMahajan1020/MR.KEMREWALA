@@ -295,3 +295,9 @@
   }
 
 }
+
+.services { background: #0f0f0f; color: #fff; }
+.section-tag { color: #c9a227; font-family: var(--mono); letter-spacing: .16em; }
+.services-header h2 { font-family: var(--serif); font-weight: 700; letter-spacing: -.06em; }
+.services-header p { color: #b8b8b8; }
+.service-card { border-radius: var(--radius-lg); }

@@ -167,6 +167,13 @@
 
 }
 
+.about { background: #0b0b0b; color: #fff; }
+.about-tag { color: #c8a96a; font-family: var(--mono); letter-spacing: .16em; }
+.about-title { font-family: var(--serif); font-weight: 700; letter-spacing: -.06em; }
+.about-title span { color: #c8a96a; }
+.about-description { color: #bdbdbd; }
+.stat h3 { color: #fff; font-family: var(--serif); }
+
 
 @media (max-width: 480px) {
 

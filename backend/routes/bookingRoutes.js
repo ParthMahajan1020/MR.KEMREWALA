@@ -1,0 +1,10 @@
+const express = require("express");
+const { authenticate, requireAdmin } = require("../middleware/auth");
+const { createBooking, listBookings, updateBooking } = require("../controllers/bookingController");
+const router = express.Router();
+router.use(authenticate);
+router.post("/", createBooking);
+router.get("/", listBookings);
+router.patch("/:id", updateBooking);
+router.get("/admin/all", requireAdmin, listBookings);
+module.exports = router;

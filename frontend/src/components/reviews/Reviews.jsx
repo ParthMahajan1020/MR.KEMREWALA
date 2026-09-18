@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./Reviews.css";
 import { FaStar } from "react-icons/fa";
 
@@ -81,7 +81,8 @@ const Reviews = () => {
     };
 
     useEffect(() => {
-        fetchReviews();
+        const timer = window.setTimeout(fetchReviews, 0);
+        return () => window.clearTimeout(timer);
     }, []);
 
     return (

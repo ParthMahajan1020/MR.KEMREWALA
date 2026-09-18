@@ -1,6 +1,5 @@
 import "./Services.css";
 import { services } from "./services";
-import { FaArrowRight } from "react-icons/fa6";
 
 const Services = () => {
   return (

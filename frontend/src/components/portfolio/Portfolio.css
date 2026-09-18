@@ -332,10 +332,17 @@
   --portfolio-muted: #96938c;
   --portfolio-line: rgba(244, 240, 232, .18);
   --portfolio-accent: #d5b078;
-  background: #11110f;
+  background: #0a0a0a;
   padding-inline: clamp(24px, 7vw, 112px);
   text-align: left;
 }
+
+.portfolio { background: #0a0a0a; }
+.portfolio h4, .category-header span { font-family: var(--mono); color: var(--acid); }
+.portfolio h2, .category-header h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -.06em; }
+.category-tabs button { border-radius: var(--radius-sm); }
+.category-tabs button:hover, .category-tabs button:focus-visible, .category-tabs .active { background: #c7a46a; border-color: #c7a46a; }
+.gallery-card { border-radius: var(--radius-lg); }
 
 .portfolio h4 {
   margin-bottom: 18px;
@@ -393,7 +400,7 @@
 .category-tabs .active {
   border-color: var(--portfolio-ink);
   background: var(--portfolio-ink);
-  color: #11110f;
+  color: #0a0a0a;
   outline: none;
 }
 
@@ -537,7 +544,7 @@
 .gallery-arrow:focus-visible:not(.swiper-button-disabled) {
   border-color: var(--portfolio-accent);
   background: var(--portfolio-accent);
-  color: #11110f;
+  color: #0a0a0a;
   outline: none;
 }
 
@@ -608,4 +615,5 @@
   .gallery-arrow {
     transition: none;
   }
+
 }

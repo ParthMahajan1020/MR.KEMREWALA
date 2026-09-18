@@ -57,6 +57,11 @@ const Navbar = () => {
             REVIEWS
           </a>
 
+          <a href="#portal" className="nav-link">
+            <span>05</span>
+            PORTAL
+          </a>
+
         </div>
 
         {/* Contact Button */}
@@ -105,6 +110,11 @@ const Navbar = () => {
           <a href="#reviews" onClick={closeMenu}>
             <span>04</span>
             REVIEWS
+          </a>
+
+          <a href="#portal" onClick={closeMenu}>
+            <span>05</span>
+            PORTAL
           </a>
 
           <a

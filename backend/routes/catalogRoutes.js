@@ -1,0 +1,11 @@
+const express = require("express");
+const { authenticate, requireAdmin } = require("../middleware/auth");
+const { listServices, listPackages, createService, updateService, createPackage, updatePackage } = require("../controllers/catalogController");
+const router = express.Router();
+router.get("/services", listServices);
+router.get("/packages", listPackages);
+router.post("/services", authenticate, requireAdmin, createService);
+router.patch("/services/:id", authenticate, requireAdmin, updateService);
+router.post("/packages", authenticate, requireAdmin, createPackage);
+router.patch("/packages/:id", authenticate, requireAdmin, updatePackage);
+module.exports = router;

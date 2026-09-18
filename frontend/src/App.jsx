@@ -7,6 +7,7 @@ import Contact from './components/contact/Contact.jsx'
 import Footer from './components/footer/Footer.jsx'
 import Intro from "./components/intro/Intro.jsx";
 import Reviews from "./components/reviews/Reviews.jsx";
+import BusinessPortal from "./components/platform/BusinessPortal.jsx";
 import { useRef, useState } from 'react'
 
 const App = () => {
@@ -24,12 +25,13 @@ const App = () => {
         <Intro onFinish={handleIntroFinish} />
       )}
 
-      <div className="website website-visible">
+      <div className={`website ${introFinished ? "website-visible" : "website-hidden"}`}>
       <Hero portfolioRef={portfolioRef} />
       <Portfolio ref={portfolioRef} />
       <About />
       <Services />
       <Reviews />
+      <BusinessPortal />
       <Contact />
       <Footer />
       </div>

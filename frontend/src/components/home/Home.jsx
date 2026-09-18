@@ -56,11 +56,14 @@ const Home = ({ portfolioRef }) => {
         <div className="overlay"></div>
 
         <div className="hero-content">
-          <h1>MR.KEMREWALA</h1>
-          <p>We think Photos are the Emotion of Love</p>
+          <p className="hero-kicker">PUNE / INDIA <span>—</span> VISUAL STORYTELLER</p>
+          <h1><span>MR.</span>KEMREWALA</h1>
+          <p className="hero-copy">Photographs for the wildly in love,<br />the deeply human, and the beautifully undone.</p>
 
-          <button onClick={scrollToPortfolio}>View Portfolio</button>
+          <button onClick={scrollToPortfolio}>Explore the work <span>↘</span></button>
         </div>
+
+        {/* <div className="hero-meta"><span>SCROLL TO DISCOVER</span><i /></div> */}
 
       </div>
     </>

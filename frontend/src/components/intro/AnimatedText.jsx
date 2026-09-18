@@ -1,4 +1,3 @@
-import React from "react";
 
 const AnimatedText = ({ textRef }) => {
   const brand = "KEMREWALA".split("");

@@ -220,3 +220,9 @@
   }
 
 }
+
+.footer { background: #0b0b0b; color: #fff; }
+.footer-description, .footer-link, .footer-bottom p { color: #a8a8a8; }
+.footer h3 { font-family: var(--mono); color: #fff; letter-spacing: .12em; }
+.footer-divider { border-color: rgba(255,255,255,.08); }
+.social-icons a { border-color: rgba(255,255,255,.08); color: #fff; border-radius: var(--radius-md); }

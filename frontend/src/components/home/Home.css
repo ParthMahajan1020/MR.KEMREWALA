@@ -193,6 +193,7 @@
     height: clamp(620px, 100svh, 960px);
     min-height: 0;
   overflow: hidden;
+    background: #050505;
 }
 
 .driftwall-container {
@@ -208,11 +209,35 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.35);
+    background: linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.2) 60%, rgba(0,0,0,.42));
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+    width: min(100%, 1440px);
+    margin: 0 auto;
+    padding: 190px clamp(24px, 8vw, 140px) 80px;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+}
+
+.hero-kicker { color: var(--acid); font: 500 .68rem/1 var(--mono); letter-spacing: .16em; margin: 0 0 24px; }
+.hero-kicker span { color: var(--paper); margin: 0 10px; }
+.hero-content h1 { font: 700 clamp(4.3rem, 11.4vw, 11rem)/.82 var(--serif); letter-spacing: -.08em; margin: 0; max-width: 1000px; }
+.hero-content h1 span { color: var(--acid); }
+.hero-copy { color: rgba(255,255,255,.78); font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.55; margin: 34px 0; }
+.hero-content button { border: 1px solid var(--acid); background: var(--acid); color: var(--ink); padding: 15px 19px; border-radius: var(--radius-md); font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.hero-content button span { display: inline-block; margin-left: 28px; font-size: 1.2rem; transition: transform .3s ease; }
+.hero-content button:hover span { transform: translate(4px, 4px); }
+.hero-meta { position: absolute; bottom: 34px; left: clamp(24px, 8vw, 140px); z-index: 3; display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,.65); font: .62rem var(--mono); letter-spacing: .14em; }
+.hero-meta i { width: 64px; height: 1px; background: var(--acid); }
+
+@media (max-width: 768px) {
+    .hero-content { padding: 150px 24px 80px; }
+    .hero-content h1 { max-width: 100%; font-size: clamp(2.55rem, 13.2vw, 6rem); letter-spacing: -.1em; overflow-wrap: anywhere; }
+    .hero-copy br { display: none; }
+    .hero-meta { left: 24px; bottom: 24px; }
 }
 

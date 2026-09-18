@@ -560,6 +560,7 @@
       0
       14px;
 
+
     border-radius: 19px;
   }
 
@@ -665,3 +666,11 @@
     justify-content: space-between;
   }
 }
+
+/* Editorial shell overrides */
+.navbar { top: 18px; left: clamp(18px, 3vw, 48px); right: clamp(18px, 3vw, 48px); height: 68px; padding: 0 10px 0 18px; border-radius: var(--radius-sm); }
+.navbar-logo { min-width: 210px; }
+.logo-mark { border-radius: var(--radius-sm); background: var(--acid); color: var(--ink); }
+.logo-text { font-size: 13px; }
+.navbar-contact-btn { min-width: 0; border-radius: var(--radius-md); background: var(--paper); }
+@media (max-width: 900px) { .navbar-logo { min-width: 0; } }

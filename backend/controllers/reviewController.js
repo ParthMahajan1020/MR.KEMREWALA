@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 const Review = require("../models/Review");
-const transporter = require("../config/mailConfig");
+const sendEmail = require("../utils/sendEmail");
 
 
 // Escape HTML to prevent user-submitted content from breaking the email
@@ -84,9 +84,7 @@ const createReview = async (req, res) => {
 
 
         // Send notification email to photographer
-        await transporter.sendMail({
-            from: `"MR.KEMREWALA Reviews" <${process.env.EMAIL}>`,
-            to: process.env.EMAIL,
+        await sendEmail({
             subject: `New Client Review - ${name}`,
 
             html: `

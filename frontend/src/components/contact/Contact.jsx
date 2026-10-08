@@ -136,6 +136,7 @@ const Contact = () => {
                                 placeholder="Tell me about your shoot..."
                                 value={formData.message}
                                 onChange={handleChange}
+                                required
                             />
                         </div>
 

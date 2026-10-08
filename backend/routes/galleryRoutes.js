@@ -1,11 +1,14 @@
 const express = require("express");
 const { authenticate, requireAdmin } = require("../middleware/auth");
 const { listGalleries, createGallery, updateGallery, updatePhoto, addPhoto } = require("../controllers/galleryController");
+
 const router = express.Router();
+
 router.use(authenticate);
 router.get("/", listGalleries);
 router.post("/", requireAdmin, createGallery);
 router.patch("/:id", requireAdmin, updateGallery);
 router.post("/:id/photos", requireAdmin, addPhoto);
-router.patch("/:id/photos/:photoId", updatePhoto);
+router.patch("/:id/photos/:photoId", requireAdmin, updatePhoto);
+
 module.exports = router;

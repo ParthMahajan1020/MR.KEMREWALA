@@ -56,7 +56,7 @@ const Home = ({ portfolioRef }) => {
         <div className="overlay"></div>
 
         <div className="hero-content">
-          <p className="hero-kicker">PUNE / INDIA <span>—</span> VISUAL STORYTELLER</p>
+          <p className="hero-kicker">INDIA <span>—</span> VISUAL STORYTELLER</p>
           <h1><span>MR.</span>KEMREWALA</h1>
           <p className="hero-copy">Photographs for the wildly in love,<br />the deeply human, and the beautifully undone.</p>
 

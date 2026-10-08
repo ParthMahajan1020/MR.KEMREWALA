@@ -35,14 +35,14 @@ const Footer = () => {
         <div className="footer-contact">
           <h3>Contact</h3>
 
-          <a href="mailto:parthmaha28@gmail.com" className="footer-link">
+          <a href="mailto:himrkemrewala@gmail.com" className="footer-link">
             <MdEmail className="footer-icon" />
-            <span>parthmaha28@gmail.com</span>
+            <span>himrkemrewala@gmail.com</span>
           </a>
 
-          <a href="tel:+919373550012" className="footer-link">
+          <a href="tel:+918888908686" className="footer-link">
             <MdPhone className="footer-icon" />
-            <span>+91 9373550012</span>
+            <span>+91 8888908686</span>
           </a>
 
           <div className="footer-link">

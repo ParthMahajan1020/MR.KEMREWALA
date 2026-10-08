@@ -103,13 +103,17 @@ Real credentials are intentionally excluded from GitHub. Create `backend/.env` l
 ```text
 PORT
 EMAIL
-APP_PASSWORD
 MONGODB_URI
-PHOTOGRAPHER_EMAIL
 BACKEND_URL
+JWT_SECRET
+ADMIN_NAME
+ADMIN_EMAIL
+ADMIN_PASSWORD
+RESEND_API_KEY
+RESEND_FROM_EMAIL
 ```
 
-`EMAIL` and `APP_PASSWORD` are used for Gmail/Nodemailer notifications. `MONGODB_URI` is the MongoDB connection string. `BACKEND_URL` is used when generating review approval and deletion links.
+`EMAIL` is the photographer's receiving email address. Contact requests and review notifications are sent to it through Resend. `RESEND_API_KEY` authenticates the backend with Resend, and `RESEND_FROM_EMAIL` must be a sender address verified with Resend. `MONGODB_URI` is the MongoDB connection string. `BACKEND_URL` is used when generating review approval and deletion links. No Gmail app password is needed.
 
 ## API Endpoints
 
@@ -125,7 +129,7 @@ BACKEND_URL
 - Never commit `node_modules/`, `dist/`, build output, or local IDE files.
 - Run `npm install` in both application directories after cloning.
 - The frontend currently targets the backend at `http://localhost:5000` for contact and review requests.
-- A MongoDB database and configured email account are required for live backend submissions.
+- A MongoDB database and configured Resend account/sender are required for live backend submissions.
 
 ## License
 

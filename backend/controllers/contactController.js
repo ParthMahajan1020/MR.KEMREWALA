@@ -1,10 +1,22 @@
-const transporter = require("../config/mailConfig");
+const sendEmail = require("../utils/sendEmail");
+
+const escapeHtml = (text) => String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 
 const sendContactForm = async (req, res) => {
     try {
-        const { name, phone, email, message } = req.body;
+        const { name, phone, email, message } = req.body || {};
 
-        if (!name || !phone || !email || !message) {
+        if (
+            typeof name !== "string" || !name.trim() ||
+            typeof phone !== "string" || !phone.trim() ||
+            typeof email !== "string" || !email.trim() ||
+            typeof message !== "string" || !message.trim()
+        ) {
             return res.status(400).json({
                 success: false,
                 message: "All fields are required."
@@ -27,25 +39,20 @@ const sendContactForm = async (req, res) => {
             });
         }
 
-        const mailOptions = {
-            from: `"MR. Kemrewala Photography" <${process.env.EMAIL}>`,
-            to: process.env.EMAIL,
-            replyTo: email,
-            subject: `New Booking Request from ${name}`,
+        const safeName = escapeHtml(name.trim());
+        const safePhone = escapeHtml(phone.trim());
+        const safeEmail = escapeHtml(email.trim());
+        const safeMessage = escapeHtml(message.trim()).replace(/\r?\n/g, "<br>");
 
+        await sendEmail({
+            replyTo: email.trim(),
+            subject: `New Booking Request from ${name.trim()}`,
             html: `
     <div style="background:#f4f4f4;padding:40px 20px;font-family:Arial,Helvetica,sans-serif;">
 
         <div style="max-width:650px;margin:auto;background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);">
 
-            <!-- Header -->
             <div style="background:#111111;padding:35px;text-align:center;">
-
-                <img
-                    src="cid:logo"
-                    alt="MR. Kemrewala"
-                    style="width:180px;margin-bottom:15px;"
-                />
 
                 <h1 style="margin:0;color:#F2B27D;font-size:28px;font-weight:600;">
                     New Booking Request
@@ -56,8 +63,6 @@ const sendContactForm = async (req, res) => {
                 </p>
 
             </div>
-
-            <!-- Content -->
 
             <div style="padding:35px;">
 
@@ -74,17 +79,17 @@ const sendContactForm = async (req, res) => {
 
                     <tr>
                         <td style="font-weight:bold;width:160px;">Name</td>
-                        <td>${name}</td>
+                        <td>${safeName}</td>
                     </tr>
 
                     <tr style="background:#fafafa;">
                         <td style="font-weight:bold;">Phone</td>
-                        <td>${phone}</td>
+                        <td>${safePhone}</td>
                     </tr>
 
                     <tr>
                         <td style="font-weight:bold;">Email</td>
-                        <td>${email}</td>
+                        <td>${safeEmail}</td>
                     </tr>
 
                 </table>
@@ -105,12 +110,10 @@ const sendContactForm = async (req, res) => {
                         color:#555;
                     "
                 >
-                    ${message}
+                    ${safeMessage}
                 </div>
 
             </div>
-
-            <!-- Footer -->
 
             <div
                 style="
@@ -127,34 +130,21 @@ const sendContactForm = async (req, res) => {
 
                 <br><br>
             </div>
-
         </div>
-
-    </div>
-    `,
-
-            attachments: [
-                {
-                    filename: "logo.png",
-                    path: "./assets/logo.png",
-                    cid: "logo",
-                },
-            ],
-        };
-
-        await transporter.sendMail(mailOptions);
+    </div>`,
+        });
 
         res.status(200).json({
             success: true,
-            message: "Your inquiry has been sent successfully!",
+            message: "Message sent successfully.",
         });
 
     } catch (error) {
-        console.error(error);
+        console.error("Contact email delivery failed:", error);
 
         res.status(500).json({
             success: false,
-            message: "Failed to send inquiry.",
+            message: "Unable to send your message.",
         });
     }
 };
